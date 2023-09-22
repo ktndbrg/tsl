@@ -15,6 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
+#define _POSIX_C_SOURCE 2008011L
 
 #include <unistd.h>
 #include <stdio.h>
@@ -31,7 +32,7 @@ double factorial (double n)
 {
 	/* Quick error checking */
 	if (n < 0.0) {
-		fprintf (stderr, "Error in factorial(), n < 0.0\n");
+		fprintf (stderr, "Error in factorial(%g)\n", n);
 		return (1.0);
 	}
 
@@ -54,7 +55,7 @@ double factorial (double n)
 double permutations (double n, double r)
 {
 	if (n < r || n < 0.0 || r < 0.0) {
-		fprintf (stderr, "Error in permuations, invalid argument nPk(%g, %g)\n", n, r);
+		fprintf (stderr, "Error in permuations(%g, %g)\n", n, r);
 	}
 
 	return (factorial (n) / factorial (n - r));
