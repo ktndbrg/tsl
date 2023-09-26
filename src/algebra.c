@@ -28,15 +28,15 @@
 
 double solve (double (*f)(double), double lower, double upper)
 {
-    if ((func_ptr(lower) * func_ptr(upper) >= 0.0)) {
-        fprintf (stderr, "Error in solve(%p, %g, %g)\n", func_ptr, lower, upper);
+    if ((f(lower) * f(upper) >= 0.0)) {
+        fprintf (stderr, "Error in solve(%p, %g, %g)\n", f, lower, upper);
         return (NAN);
     }
     
     double mid = 0.0;
-    for (int i = 0; i < MAX_ITER || func_ptr(mid) < EPSILON; i++) {
+    for (int i = 0; i < MAX_ITER || f(mid) < EPSILON; i++) {
         mid = (lower + upper) / 2.0;
-        if (func_ptr(lower) * func_ptr(mid) < 0.0) {
+        if (f(lower) * f(mid) < 0.0) {
             upper = mid;
         }
         else {
@@ -47,14 +47,14 @@ double solve (double (*f)(double), double lower, double upper)
     return (mid);
 }
 
-double f (double x)
+double poly (double x)
 {
 	return (x * x * x * x * x - x - 1.0);
 }
 
 int main (void)
 {
-	printf ("Root of f(x) is located at x = %2.6g\n", solve(f, 1.0, 2.0));
+	printf ("Root of f(x) is located at x = %2.6g\n", solve(poly, 1.0, 2.0));
 
 	return (0);
 }
