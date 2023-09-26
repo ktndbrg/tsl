@@ -34,7 +34,7 @@ double solve (double (*f)(double), double lower, double upper)
     }
     
     double mid = 0.0;
-    for (int i = 0; i < MAX_ITER || fabs (f(mid)) < EPSILON; i++) {
+    for (int i = 0; i < MAX_ITER && fabs (f(mid)) < EPSILON; i++) {
         mid = (lower + upper) / 2.0;
         if (f(lower) * f(mid) < 0.0) {
             upper = mid;
