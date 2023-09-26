@@ -26,7 +26,7 @@
 #define MAX_ITER 1E9
 #define EPSILON 1.0E-9
 
-typedef double (*)(double) func_ptr;
+typedef double *(double) func_ptr;
 double solve (func_ptr, double lower, double upper)
 {
     if ((func_ptr(lower) * func_ptr(upper) >= 0.0)) {
