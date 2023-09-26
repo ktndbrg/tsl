@@ -23,8 +23,8 @@
 #include <stdbool.h>
 #include <tgmath.h>
 
-#define MAX_ITER 1E3
-#define EPSILON 1.0E-3
+#define MAX_ITER 1E9
+#define EPSILON 1.0E-9
 
 double solve (double (*f)(double), double lower, double upper)
 {
