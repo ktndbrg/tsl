@@ -54,7 +54,7 @@ double poly (double x)
 
 int main (void)
 {
-	printf ("Root of f(x) is located at x = %.9E\n", solve(poly, 1.0, 2.0));
+	printf ("Root of f(x) is located at x = %+.9E\n", solve(poly, 1.0, 2.0));
 
 	return (0);
 }
