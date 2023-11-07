@@ -1,6 +1,8 @@
 # tsl
 Tandberg Scientific Library. GPLv3 License.
 
+Project is a *WIP* - needs to be organized before the commits starts rolling in.
+
 In my studies I find the methods of linear algebra and numerical analysis to be very interesting.
 Since I am learning the C++20 language (coming from C17) I find it very intuative to write numerical based software.
 
